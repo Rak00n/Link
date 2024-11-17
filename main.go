@@ -123,6 +123,7 @@ func receiveCCPayload(session *wintun.Session) {
 	for {
 
 		p :=  make([]byte, 65535)
+		
 		fmt.Println("Waiting for payload from server",ccConnection)
 		n,remoteaddr,err := ccConnection.ReadFromUDP(p)
 		p = bytes.Trim(p, "\x00")
